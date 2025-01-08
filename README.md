@@ -1,5 +1,7 @@
 # p15_anfaenger_version
 
+Anfänger freundliche Versionen nur mit ListView und als Alternative mit ListView.builder
+
 ## Aufgabe
 
 In dieser Aufgabe geht es darum, einen Screenshot grob nachzubauen.
