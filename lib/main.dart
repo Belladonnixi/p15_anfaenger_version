@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
+// Die Hauptfunktion, die die App startet.
 void main() {
   runApp(const MainApp());
 }
 
-// Modelklasse für ein ListItem
+// Eine Modelklasse, die ein Listenelement definiert.
+// Diese Klasse speichert ein Symbol (Icon) und einen Titel (Text).
 class ListItem {
   ListItem(this.icon, this.title);
   final IconData icon;
   final String title;
 }
 
+// Eine Map, die die Kategorien und deren Listenelemente definiert.
+// Jede Kategorie (z. B. "Account", "Info") hat eine Liste von ListItems.
 final Map<String, List<ListItem>> itemsMap = {
   'Account': [
     ListItem(Icons.language, 'App-Sprache'),
@@ -24,6 +28,7 @@ final Map<String, List<ListItem>> itemsMap = {
   ],
 };
 
+// Die Haupt-App-Klasse, die das Grundgerüst der App bereitstellt.
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -31,6 +36,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        // Die obere AppBar mit einem Titel und einer Trennlinie.
         appBar: AppBar(
           title: const Text(
             'Einstellungen',
@@ -45,16 +51,20 @@ class MainApp extends StatelessWidget {
             ),
           ),
         ),
+        // Der Hauptinhalt der Seite.
         body: Column(
           children: [
+            // Expanded sorgt dafür, dass die ListView den gesamten verfügbaren Platz einnimmt.
             Expanded(
               child: ListView(
+                // Die Map (itemsMap) wird in eine Liste von Widgets umgewandelt.
                 children: itemsMap.entries.map((entry) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // Kategorie-Titel (z. B. "Account" oder "Info").
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
@@ -65,32 +75,38 @@ class MainApp extends StatelessWidget {
                             ),
                           ),
                         ),
+                        // Die Listenelemente innerhalb einer Kategorie.
                         Column(
                           children: entry.value.map((item) {
                             return ListTile(
-                              leading: Icon(item.icon),
-                              title: Text(item.title),
+                              leading:
+                                  Icon(item.icon), // Icon des Listenelements
+                              title:
+                                  Text(item.title), // Titel des Listenelements
                               trailing: const Icon(
                                 Icons.chevron_right,
                               ),
                               onTap: () {
+                                // Einfache Aktion beim Antippen des Listenelements.
                                 print('${item.title} tapped');
                               },
                             );
-                          }).toList(),
+                          }).toList(), // Die ListItems werden in ListTiles umgewandelt.
                         ),
                       ],
                     ),
                   );
-                }).toList(),
+                }).toList(), // Die Map wird in eine Liste von Widgets konvertiert.
               ),
             ),
+            // Bereich am unteren Rand der Seite mit Buttons.
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
-                // Minimiert die Größe der Leiste, basierend auf dem Inhalt, da Columns ansonsnten die gesamte verfügbare Höhe einnehmen.
+                // Minimiert die Größe der Spalte basierend auf dem Inhalt.
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  // Button zum "Ausloggen".
                   TextButton(
                     onPressed: () => print('Ausloggen tapped'),
                     child: const Text(
@@ -102,6 +118,7 @@ class MainApp extends StatelessWidget {
                       ),
                     ),
                   ),
+                  // Button zum "Account löschen".
                   TextButton(
                     onPressed: () => print('Account löschen tapped'),
                     child: const Text(
