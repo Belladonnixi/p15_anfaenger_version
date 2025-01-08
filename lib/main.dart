@@ -74,7 +74,7 @@ class MainApp extends StatelessWidget {
                                 Icons.chevron_right,
                               ),
                               onTap: () {
-                                print('${item.title} tappedddd');
+                                print('${item.title} tapped');
                               },
                             );
                           }).toList(),
