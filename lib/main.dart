@@ -70,6 +70,7 @@ class MainApp extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Text(
+                            // Der Kategorienname wird als Titel angezeigt.
                             entry.key,
                             style: const TextStyle(
                               fontSize: 18,
@@ -79,6 +80,7 @@ class MainApp extends StatelessWidget {
                         ),
                         // Die Listenelemente innerhalb einer Kategorie.
                         Column(
+                          // mit entry.value.map werden die ListItems in ListTiles umgewandelt.
                           children: entry.value.map((item) {
                             return ListTile(
                               leading:
