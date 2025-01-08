@@ -39,25 +39,23 @@ class MainApp2 extends StatelessWidget {
     ]
     */
 
-    /* 
-        Alternative Version mit Spread-Operator:
-        um die temporäre Liste zu erstellen und die Listenelemente hinzuzufügen.
-        
-        final List<MapEntry<String, ListItem?>> itemsList =
-        itemsMap.entries.expand((entry) {
-      // Für jede Kategorie (z. B. "Account", "Info") erstellen wir eine Liste.
-      return [
-        // 1. Füge einen MapEntry für den Kategorienamen hinzu.
-        // Der Wert (ListItem) ist null, da dies nur ein Titel ist.
-        MapEntry(entry.key, null),
+    //   //Alternative Version mit Spread-Operator:
+    //   //um die temporäre Liste zu erstellen und die Listenelemente hinzuzufügen.
 
-        // 2. Füge alle Listenelemente dieser Kategorie hinzu.
-        // Jedes Listenelement wird in einen MapEntry umgewandelt, wobei der Schlüssel ein leerer String ist.
-        // ... ist der Spread-Operator, der die Liste von ListItems in eine Liste von MapEntries umwandelt.
-        ...entry.value.map((item) => MapEntry('', item)),
-      ];
-    }).toList(); // Konvertiere das Ergebnis in eine Liste.
- */
+    //   final List<MapEntry<String, ListItem?>> itemsList =
+    //   itemsMap.entries.expand((entry) {
+    // // Für jede Kategorie (z. B. "Account", "Info") erstellen wir eine Liste.
+    // return [
+    //   // 1. Füge einen MapEntry für den Kategorienamen hinzu.
+    //   // Der Wert (ListItem) ist null, da dies nur ein Titel ist.
+    //   MapEntry(entry.key, null),
+
+    //   // 2. Füge alle Listenelemente dieser Kategorie hinzu.
+    //   // Jedes Listenelement wird in einen MapEntry umgewandelt, wobei der Schlüssel ein leerer String ist.
+    //   // ... ist der Spread-Operator, der die Liste von ListItems in eine Liste von MapEntries umwandelt.
+    //   ...entry.value.map((item) => MapEntry('', item)),
+    // ];
+    // }).toList(); // Konvertiere das Ergebnis in eine Liste.
 
     return MaterialApp(
       home: Scaffold(
