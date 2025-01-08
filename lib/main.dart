@@ -57,6 +57,7 @@ class MainApp extends StatelessWidget {
         body: Column(
           children: [
             // Expanded sorgt dafür, dass die ListView den gesamten verfügbaren Platz einnimmt.
+            // ohne Expand würde das einen RenderFlex-Fehler verursachen (da Column nicht genügend Platz für ListView hat)
             Expanded(
               child: ListView(
                 // Die Map (itemsMap) wird in eine Liste von Widgets umgewandelt.
@@ -68,7 +69,7 @@ class MainApp extends StatelessWidget {
                       children: [
                         // Kategorie-Titel (z. B. "Account" oder "Info").
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 24.0),
                           child: Text(
                             // Der Kategorienname wird als Titel angezeigt.
                             entry.key,
@@ -83,6 +84,10 @@ class MainApp extends StatelessWidget {
                           // mit entry.value.map werden die ListItems in ListTiles umgewandelt.
                           children: entry.value.map((item) {
                             return ListTile(
+                              // contentPadding sorgt für zusätzlichen Abstand.
+                              // im Standard hat ListTile ein Padding an start von 16 Pixeln
+                              contentPadding:
+                                  EdgeInsets.symmetric(horizontal: 24),
                               leading:
                                   Icon(item.icon), // Icon des Listenelements
                               title:

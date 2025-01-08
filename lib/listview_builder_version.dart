@@ -15,6 +15,7 @@ class MainApp2 extends StatelessWidget {
       final List<MapEntry<String, ListItem?>> tempList = [];
 
       // 1. Füge den Kategorienamen hinzu (mit null als ListItem).
+      // MapEntry.key ist der Kategoriename, MapEntry.value ist die Liste von ListItems.
       tempList.add(MapEntry(entry.key, null));
 
       // 2. Iteriere über alle Listenelemente und füge sie zur Liste hinzu.
@@ -76,6 +77,7 @@ class MainApp2 extends StatelessWidget {
         body: Column(
           children: [
             // Expanded sorgt dafür, dass der ListView den verfügbaren Platz einnimmt
+            // ohne Expand würde das einen RenderFlex-Fehler verursachen (da Column nicht genügend Platz für ListView hat)
             Expanded(
               child: ListView.builder(
                 itemCount: itemsList.length, // Anzahl der Einträge
@@ -97,7 +99,7 @@ class MainApp2 extends StatelessWidget {
                     );
                   }
 
-                  // Ansonsten handelt es sich um ein Listenelement
+                  // Ansonsten handelt es sich um ein value-ListItem
                   final item = entry.value!;
                   return ListTile(
                     leading: Icon(item.icon),
