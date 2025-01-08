@@ -1,3 +1,7 @@
 # p15_anfaenger_version
 
-A new Flutter project.
+## Aufgabe
+
+In dieser Aufgabe geht es darum, einen Screenshot grob nachzubauen.
+
+
