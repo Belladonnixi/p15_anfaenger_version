@@ -8,7 +8,7 @@ class MainApp2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Eine Map, die die Kategorien und deren Listenelemente definiert.
+    // Eine Map, die die Kategorien und deren Listenelemente definiert. Damit kann man die Kategorien und Listenelemente in einer Liste anzeigen.
     final List<MapEntry<String, ListItem?>> itemsList =
         itemsMap.entries.expand((entry) {
       // Temporäre Liste für Kategoriename und Listenelemente
