@@ -31,6 +31,8 @@ class MainApp extends StatelessWidget {
             // ohne Expand würde das einen RenderFlex-Fehler verursachen (da Column nicht genügend Platz für ListView hat)
             Expanded(
               child: ListView(
+                // verhindert das die ListView scrollbar ist
+                physics: const NeverScrollableScrollPhysics(),
                 // Die Map (itemsMap) wird in eine Liste von Widgets umgewandelt.
                 children: itemsMap.entries.map((entry) {
                   return Padding(

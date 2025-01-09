@@ -78,6 +78,8 @@ class MainApp2 extends StatelessWidget {
             // ohne Expand würde das einen RenderFlex-Fehler verursachen (da Column nicht genügend Platz für ListView hat)
             Expanded(
               child: ListView.builder(
+                // verhindert das die ListView scrollbar ist
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: itemsList.length, // Anzahl der Einträge
                 itemBuilder: (context, index) {
                   final entry = itemsList[index];
