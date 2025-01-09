@@ -1,6 +1,6 @@
 // Die Haupt-App-Klasse, die das Grundgerüst der App bereitstellt.
 import 'package:flutter/material.dart';
-import 'package:p15_anfaenger_version/main.dart';
+import 'package:p15_anfaenger_version/data.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});

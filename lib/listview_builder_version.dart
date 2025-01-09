@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:p15_anfaenger_version/main.dart';
+import 'package:p15_anfaenger_version/data.dart';
 
 // Version mit ListView.builder
 
