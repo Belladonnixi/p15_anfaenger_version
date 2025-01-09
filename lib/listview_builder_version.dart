@@ -8,23 +8,41 @@ class MainApp2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Eine Map, die die Kategorien und deren Listenelemente definiert. Damit kann man die Kategorien und Listenelemente in einer Liste anzeigen.
+    // // Eine Map, die die Kategorien und deren Listenelemente definiert. Damit kann man die Kategorien und Listenelemente in einer Liste anzeigen.
+    // final List<MapEntry<String, ListItem?>> itemsList =
+    //     itemsMap.entries.expand((entry) {
+    //   // Temporäre Liste für Kategoriename und Listenelemente
+    //   final List<MapEntry<String, ListItem?>> tempList = [];
+
+    //   // 1. Füge den Kategorienamen hinzu (mit null als ListItem).
+    //   // MapEntry.key ist der Kategoriename, MapEntry.value ist die Liste von ListItems.
+    //   tempList.add(MapEntry(entry.key, null));
+
+    //   // 2. Iteriere über alle Listenelemente und füge sie zur Liste hinzu.
+    //   for (var item in entry.value) {
+    //     tempList.add(MapEntry('', item));
+    //   }
+
+    //   // Gib die temporäre Liste zurück.
+    //   return tempList;
+    // }).toList(); // Konvertiere das Ergebnis in eine Liste.
+
+    //Alternative Version mit Spread-Operator:
+    //um die temporäre Liste zu erstellen und die Listenelemente hinzuzufügen.
+
     final List<MapEntry<String, ListItem?>> itemsList =
         itemsMap.entries.expand((entry) {
-      // Temporäre Liste für Kategoriename und Listenelemente
-      final List<MapEntry<String, ListItem?>> tempList = [];
+      // Für jede Kategorie (z. B. "Account", "Info") erstellen wir eine Liste.
+      return [
+        // 1. Füge einen MapEntry für den Kategorienamen hinzu.
+        // Der Wert (ListItem) ist null, da dies nur ein Titel ist.
+        MapEntry(entry.key, null),
 
-      // 1. Füge den Kategorienamen hinzu (mit null als ListItem).
-      // MapEntry.key ist der Kategoriename, MapEntry.value ist die Liste von ListItems.
-      tempList.add(MapEntry(entry.key, null));
-
-      // 2. Iteriere über alle Listenelemente und füge sie zur Liste hinzu.
-      for (var item in entry.value) {
-        tempList.add(MapEntry('', item));
-      }
-
-      // Gib die temporäre Liste zurück.
-      return tempList;
+        // 2. Füge alle Listenelemente dieser Kategorie hinzu.
+        // Jedes Listenelement wird in einen MapEntry umgewandelt, wobei der Schlüssel ein leerer String ist.
+        // ... ist der Spread-Operator, der die Liste von ListItems in eine Liste von MapEntries umwandelt.
+        ...entry.value.map((item) => MapEntry('', item)),
+      ];
     }).toList(); // Konvertiere das Ergebnis in eine Liste.
 
     /*
@@ -39,24 +57,6 @@ class MainApp2 extends StatelessWidget {
         ...
     ]
     */
-
-    //   //Alternative Version mit Spread-Operator:
-    //   //um die temporäre Liste zu erstellen und die Listenelemente hinzuzufügen.
-
-    //   final List<MapEntry<String, ListItem?>> itemsList =
-    //   itemsMap.entries.expand((entry) {
-    // // Für jede Kategorie (z. B. "Account", "Info") erstellen wir eine Liste.
-    // return [
-    //   // 1. Füge einen MapEntry für den Kategorienamen hinzu.
-    //   // Der Wert (ListItem) ist null, da dies nur ein Titel ist.
-    //   MapEntry(entry.key, null),
-
-    //   // 2. Füge alle Listenelemente dieser Kategorie hinzu.
-    //   // Jedes Listenelement wird in einen MapEntry umgewandelt, wobei der Schlüssel ein leerer String ist.
-    //   // ... ist der Spread-Operator, der die Liste von ListItems in eine Liste von MapEntries umwandelt.
-    //   ...entry.value.map((item) => MapEntry('', item)),
-    // ];
-    // }).toList(); // Konvertiere das Ergebnis in eine Liste.
 
     return MaterialApp(
       home: Scaffold(
