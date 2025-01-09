@@ -11,6 +11,7 @@ void main() {
 // Diese Klasse speichert ein Symbol (Icon) und einen Titel (Text).
 class ListItem {
   ListItem(this.icon, this.title);
+
   final IconData icon;
   final String title;
 }
@@ -24,7 +25,7 @@ final Map<String, List<ListItem>> itemsMap = {
   ],
   'Info': [
     ListItem(Icons.info, 'Datenschutzerklärung'),
-    ListItem(Icons.gavel, "AGB's"),
+    ListItem(Icons.gavel, 'AGB\'s'),
     ListItem(Icons.article, 'Lizenzen'),
     ListItem(Icons.group, 'Community Richtlinien'),
   ],
