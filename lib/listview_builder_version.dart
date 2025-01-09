@@ -57,6 +57,8 @@ class MainApp2 extends StatelessWidget {
     // ]
 
     return MaterialApp(
+      // nimmt das debug Flag raus das man sonst sieht beim debuggen
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text(

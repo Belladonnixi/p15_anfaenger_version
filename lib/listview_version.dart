@@ -8,6 +8,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // nimmt das debug Flag raus das man sonst sieht beim debuggen
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         // Die obere AppBar mit einem Titel und einer Trennlinie.
         appBar: AppBar(
