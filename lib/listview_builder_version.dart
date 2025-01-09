@@ -86,7 +86,7 @@ class MainApp2 extends StatelessWidget {
                   if (entry.value == null) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 16.0, vertical: 8.0),
+                          horizontal: 24.0, vertical: 8.0),
                       child: Text(
                         entry.key,
                         style: const TextStyle(
@@ -100,6 +100,7 @@ class MainApp2 extends StatelessWidget {
                   // Ansonsten handelt es sich um ein value-ListItem
                   final item = entry.value!;
                   return ListTile(
+                    contentPadding: EdgeInsets.symmetric(horizontal: 24),
                     leading: Icon(item.icon),
                     title: Text(item.title),
                     trailing: const Icon(Icons.chevron_right),
