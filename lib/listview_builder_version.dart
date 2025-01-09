@@ -90,7 +90,7 @@ class MainApp2 extends StatelessWidget {
                       child: Text(
                         entry.key,
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
