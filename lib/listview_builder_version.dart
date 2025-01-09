@@ -45,18 +45,16 @@ class MainApp2 extends StatelessWidget {
       ];
     }).toList(); // Konvertiere das Ergebnis in eine Liste.
 
-    /*
-    itemsList sieht so aus danach:
-    [
-        MapEntry('Account', null), // Kategoriename
-        MapEntry('', ListItem(Icons.language, 'App-Sprache')), // Element 1
-        MapEntry('', ListItem(Icons.block, 'Blockierte User')), // Element 2
-        MapEntry('Info', null), // Kategoriename
-        MapEntry('', ListItem(Icons.info, 'Datenschutzerklärung')), // Element 1
-        MapEntry('', ListItem(Icons.gavel, 'AGB\'s')), // Element 2
-        ...
-    ]
-    */
+    // // itemsList sieht so aus danach:
+    // [
+    //     MapEntry('Account', null), // Kategoriename
+    //     MapEntry('', ListItem(Icons.language, 'App-Sprache')), // Element 1
+    //     MapEntry('', ListItem(Icons.block, 'Blockierte User')), // Element 2
+    //     MapEntry('Info', null), // Kategoriename
+    //     MapEntry('', ListItem(Icons.info, 'Datenschutzerklärung')), // Element 1
+    //     MapEntry('', ListItem(Icons.gavel, 'AGB\'s')), // Element 2
+    //     ...
+    // ]
 
     return MaterialApp(
       home: Scaffold(
